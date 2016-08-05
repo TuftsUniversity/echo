@@ -1,6 +1,6 @@
 development: &default
   adapter: sqlite3
-  database: echo_development
+  database: db/echo_development.sqlite3
   encoding: utf8
   min_messages: warning
   pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
@@ -9,7 +9,7 @@ development: &default
 
 test:
   <<: *default
-  database: echo_test
+  database: db/echo_test.sqlite3
 
 production: &deploy
   adapter: mysql

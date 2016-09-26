@@ -3,7 +3,8 @@
 *.swo
 *.swp
 /.bundle
-/.env
+.env
+/config/secrets.yml
 /coverage/*
 /db/*.sqlite3
 /log/*

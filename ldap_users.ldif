@@ -1,0 +1,21 @@
+version: 1
+
+dn: ou=people,dc=example,dc=org
+objectClass: top
+objectClass: organizationalUnit
+ou: people
+
+dn: uid=ldap_user,ou=people,dc=example,dc=org
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Ldap User
+sn: User
+givenName: Ldap 
+mail: ldap.user@example.org 
+uid: ldap_user 
+telephoneNumber: 123-456-7890
+ou: Example Department
+# password is 'ldap_password'
+userpassword: {SHA}rJVjBf8g/cXMVgeKb2f56Oj39co= 

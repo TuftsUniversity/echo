@@ -1,0 +1,123 @@
+.header-wrapper
+  width: 100%
+  flex: none
+  background: $primary-color
+
+.header-container
+  align-items: center
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  max-width: $max-width
+  padding: 0 $side-padding
+  position: relative
+
+  @include dashboard-small-only
+    display: block
+    padding-left: 0
+    padding-right: 0
+
+  a
+    color: $white
+
+    &:hover,
+    &:focus
+      color: $white
+
+  .branding
+    color: $logo-text-color
+    float: left
+    font-size: 24px
+    font-weight: 500
+    height: $header-height
+    line-height: $header-height
+
+    &:hover,
+    &:focus
+      color: $logo-text-color
+
+    @include dashboard-small-only
+      display: block
+      float: none
+      font-size: 3rem
+      height: 2 * $header-height
+      line-height: 2 * $header-height
+      text-align: center
+
+  .nav-toggle
+    display: none
+
+    @include dashboard-small-only
+      @include position(absolute, .75em 1em null null)
+      border: 1px solid rgba($white, 0.5)
+      border-radius: 3px
+      color: $white
+      cursor: pointer
+      display: block
+      font-size: 1em
+      font-weight: normal
+      padding: 0.75em
+
+    &:active
+      @include dashboard-small-only
+        background-color: rgba($white, 0.125)
+        border-color: $white
+        
+  nav
+    @include dashboard-small-only
+      max-height: 100em
+      overflow-y: hidden
+      transition: all 0.75s $ease-in-out-sine
+    
+    @media print
+      display: none
+
+    &.closed
+      @include dashboard-small-only
+        max-height: 0
+        opacity: 0
+        
+    ul
+      list-style-type: none
+      height: $navigation-height
+      margin: 0
+      padding: 0
+
+      @include dashboard-small-only
+        display: block
+        text-align: center
+
+    li
+      display: block
+      float: left
+      margin: 0
+
+      @include dashboard-small-only
+        border-bottom: 1px solid darken($primary-color, 5)
+        display: block
+        margin: 0
+        width: 100%
+
+      &:hover,
+      &.active
+        background: darken($primary-color, 5)
+
+      &:first-child a
+        border: 0
+
+    li a
+      border-left: 1px solid darken($primary-color, 5)
+      color: white
+      float: left
+      font-family: $sans-serif
+      font-size: 100%
+      font-weight: 500
+      height: $navigation-height
+      line-height: $navigation-height
+      padding: 0 1rem
+
+      @include dashboard-small-only
+        height: 2 * $navigation-height
+        line-height: 2 * $navigation-height
+        text-align: center
+        width: 100% 

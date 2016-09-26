@@ -15,5 +15,10 @@ module Echo
     end
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_job.queue_adapter = :delayed_job
+    
+    # eager load whowas classes
+    config.eager_load_paths += %W( #{config.root}/app/whowas/**/ )
+    
+    config.time_zone = "Eastern Time (US & Canada)"      
   end
 end

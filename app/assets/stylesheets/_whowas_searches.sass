@@ -1,0 +1,66 @@
+#whowas-search
+  @include outer-container
+  
+  .whowas-search-form
+    @include dashboard-medium
+      @include span-columns(4)
+      border-right: 1px solid lighten($grey, 45%)
+    
+    padding-right: 1.5em
+      
+    input[type="submit"]
+      margin-top: 1rem
+      width: 100%
+      
+      @include dashboard-small-only
+        font-size: 3rem      
+        margin: .25em 0
+        padding: .5em .75em     
+
+  .whowas-search-results
+    @include dashboard-medium
+      @include span-columns(8)
+      padding-top: 0
+      
+    @include dashboard-small-only
+      padding-top: 2em
+
+    position: relative
+    
+    h2
+      color: $grey
+      display: block
+      font: normal 17px $sans-serif
+      margin-bottom: 1em
+      
+      @include dashboard-small-only
+        font-size: 2.4rem      
+           
+      
+    p
+      margin-bottom: 2em
+     
+    .whowas-results-table
+      @include outer-container
+
+      .whowas-results-label
+        @include dashboard-medium
+          @include span-columns(3)
+        
+        line-height: 1em
+        margin-bottom: .5em
+        
+        @include dashboard-small-only
+          text-decoration: underline
+        
+      .whowas-results-log
+        @include dashboard-medium
+          @include span-columns(9)
+          @include omega()
+        
+        line-height: 1em
+        overflow-wrap: break-word
+        margin-bottom: .5em
+    
+  .whowas-search-errors
+    color: $red

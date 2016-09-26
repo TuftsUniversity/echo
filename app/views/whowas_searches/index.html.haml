@@ -1,0 +1,27 @@
+- content_for :subheader do
+  %header
+    .page-title
+
+
+%section#whowas-search.flex-box
+  %h2.flex-title
+    Search WhoWas
+
+  .whowas-search-form
+    = semantic_form_for @search, remote: true do |form|
+      = form.inputs do
+        = form.input :ip, label: "IP Address"
+        = form.input :port, label: "Port", hint: "Optional; required for secure wireless."
+        = form.input :timestamp, label: "Timestamp", hint: "Accepts most date and time formats, e.g. 9/1/2016 10:00 AM.  Timezone is Eastern unless specified."
+      = form.actions do
+        = form.action :submit, label: "Search"
+
+  .whowas-search-results
+    #whowas-search-spinner
+      = render "shared/spinner"
+        
+    #whowas-search-results-content.loading-content
+    
+  - if @search.username
+    = @search.username
+    

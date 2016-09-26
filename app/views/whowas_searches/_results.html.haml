@@ -1,0 +1,21 @@
+.whowas-search-results-js
+  - if search.error
+    .whowas-search-errors
+      %h2 Errors
+      = humanize_error(search.error)
+            
+  - else
+    %h2 Username
+    %p
+      = search.username || "No username found."
+    
+    %h2 Raw logs
+    - if search.results
+      %p
+        .whowas-results-table
+          - search.results.each do |log|
+            - log.each do |key, value|
+              .whowas-results-label
+                = key
+              .whowas-results-log
+                = value

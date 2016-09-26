@@ -1,0 +1,11 @@
+%section.header-wrapper{role: "header"}
+  .header-container
+    = link_to root_path, class: "branding" do
+      .title echo v2
+    - if current_user
+      %a{class: "nav-toggle"}
+        Menu
+      %nav{class: "closed"}
+        %ul
+          %li.header-user
+            = link_to "Sign out", destroy_user_session_path, method: :delete

@@ -1,0 +1,8 @@
+%section#sign-in-container
+  .sign-in
+    = semantic_form_for resource, as: resource_name, url: session_path(resource_name) do |form|
+      = form.inputs do
+        = form.input :username, autocapitalize: "off"
+        = form.input :password
+      = form.actions do
+        = form.action :submit, label: "Sign in"

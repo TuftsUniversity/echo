@@ -2,23 +2,28 @@ source "https://rubygems.org"
 
 ruby "2.3.1"
 
+gem "american_date"
 gem "autoprefixer-rails"
 gem "bourbon"
+gem "devise"
+gem "devise_ldap_authenticatable", git: "git://github.com/cschiewek/devise_ldap_authenticatable.git"
 gem "flutie"
+gem "formtastic"
 gem "jquery-rails"
+gem "jquery-ui-rails"
 gem "haml"
 gem "listen"
+gem "neat"
 gem "normalize-rails", "~> 3.0.0"
+gem "nprogress-rails"
 gem "rails", "~> 5.0.0"
 gem "sass-rails", "~> 5.0"
-gem "simple_form"
+gem "savon"
 gem "sprockets", ">= 3.0.0"
 gem "sqlite3"
 gem "suspenders"
-gem "turbolinks"
+gem "turbolinks", "~> 5.0.0"
 gem "uglifier"
-
-gem "whowas"
 
 group :development do
   gem "spring"
@@ -43,9 +48,11 @@ group :development, :staging do
 end
 
 group :test do
+  gem "capybara-screenshot"
   gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
+  gem "ladle"
   gem "launchy"
   gem "shoulda-matchers"
   gem "simplecov", require: false
@@ -56,3 +63,6 @@ end
 group :staging, :production do
   gem "rack-timeout"
 end
+
+# temporarily use local whowas while in development
+gem "whowas", path: "/opt/whowas"

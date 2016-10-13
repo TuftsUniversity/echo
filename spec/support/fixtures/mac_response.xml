@@ -1,0 +1,17 @@
+<env:Envelope
+  xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'>
+  <env:Header></env:Header>
+  <env:Body>
+    <tns:getMACAddressResponse
+      xmlns:tns='http://api.proteus.bluecatnetworks.com'>
+        <return>
+          <id>000000</id>
+          <name
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:nil="true"/>
+          <properties>raw results string</properties>
+          <type>MACAddress</type>
+        </return>
+    </tns:getMACAddressResponse>
+  </env:Body>
+</env:Envelope>

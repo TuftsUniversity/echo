@@ -39,24 +39,20 @@
     @include dashboard-small-only
       display: block
       float: none
-      font-size: 3rem
-      height: 2 * $header-height
-      line-height: 2 * $header-height
       text-align: center
 
   .nav-toggle
     display: none
 
     @include dashboard-small-only
-      @include position(absolute, .75em 1em null null)
+      @include position(absolute, 1em 1em null null)
       border: 1px solid rgba($white, 0.5)
       border-radius: 3px
       color: $white
       cursor: pointer
       display: block
-      font-size: 1em
       font-weight: normal
-      padding: 0.75em
+      padding: 0.25em
 
     &:active
       @include dashboard-small-only
@@ -117,7 +113,5 @@
       padding: 0 1rem
 
       @include dashboard-small-only
-        height: 2 * $navigation-height
-        line-height: 2 * $navigation-height
         text-align: center
         width: 100% 

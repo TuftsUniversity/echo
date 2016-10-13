@@ -39,6 +39,7 @@ Whowas.configuration do |config|
     host: ENV['SPLUNK_HOST'],
     port: ENV['SPLUNK_PORT'],
     username: ENV['SPLUNK_USERNAME'],
-    password: ENV['SPLUNK_PASSWORD']
+    password: ENV['SPLUNK_PASSWORD'],
+    basic: true
   }
 end

@@ -65,4 +65,4 @@ group :staging, :production do
 end
 
 # temporarily use local whowas while in development
-gem "whowas", path: "/opt/whowas"
+gem "whowas", path: "/opt/whowas", branch: "matchers"

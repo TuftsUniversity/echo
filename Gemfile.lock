@@ -9,7 +9,7 @@ GIT
 PATH
   remote: /opt/whowas
   specs:
-    whowas (0.2.1)
+    whowas (0.2.2)
       middleware
       splunk-sdk-ruby
 

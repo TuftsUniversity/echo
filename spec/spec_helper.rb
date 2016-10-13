@@ -9,10 +9,15 @@ if ENV.fetch("COVERAGE", false)
   SimpleCov.start "rails"
 end
 
+require "savon/mock/spec_helper"
 require "webmock/rspec"
+require "whowas/test_support"
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include Savon::SpecHelper
+  config.include Whowas::TestSupport
+  
   config.expect_with :rspec do |expectations|
     expectations.syntax = :expect
   end

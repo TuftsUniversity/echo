@@ -13,7 +13,7 @@ module Whowas
       
     ## ADAPTER
     # You MUST set this to the name of a bundled or custom adapter class.
-    @@adapter = Splunk
+    ADAPTER = Whowas::Splunk
     
     private
     

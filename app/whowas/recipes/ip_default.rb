@@ -7,7 +7,7 @@ module Whowas
     # the input of the next.
     ::Middleware::Builder.new do
       use Dhcp
-      use Clearpass # should be bluecat, fix when bluecat API access is restored
+      use Ipam
     end
   end
 end

@@ -7,12 +7,14 @@ gem "autoprefixer-rails"
 gem "bourbon"
 gem "devise"
 gem "devise_ldap_authenticatable", git: "git://github.com/cschiewek/devise_ldap_authenticatable.git"
+gem "dotenv-rails"
 gem "flutie"
 gem "formtastic"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "haml"
 gem "listen"
+gem "lograge"
 gem "neat"
 gem "normalize-rails", "~> 3.0.0"
 gem "nprogress-rails"
@@ -35,7 +37,6 @@ group :development, :test do
   gem "awesome_print"
   gem "bullet"
   gem "bundler-audit", ">= 0.5.0", require: false
-  gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "pry-byebug"
   gem "pry-rails"
@@ -62,6 +63,10 @@ end
 
 group :staging, :production do
   gem "rack-timeout"
+end
+
+group :production do
+  gem "syslogger"
 end
 
 # temporarily use local whowas while in development

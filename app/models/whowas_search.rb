@@ -7,7 +7,7 @@ class WhowasSearch
   
   def search!
     search = Whowas.search(input)
-    self.results = search[:results]    
+    self.results = search[:results]
     self.username = search[:input][:username]
     self.error = search[:error]
   rescue StandardError => e

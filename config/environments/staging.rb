@@ -6,9 +6,8 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
-  config.log_level = :debug
+  config.log_level = :info
   config.log_tags = [ :request_id ]
-  config.logger = Syslogger.new("INFOSEC-ECHO")
   config.lograge.enabled = true
   config.lograge.formatter = Lograge::Formatters::Json.new
   # add time to lograge

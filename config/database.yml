@@ -3,24 +3,24 @@ development: &default
   database: db/echo_development.sqlite3
   encoding: utf8
   min_messages: warning
-  pool: <%= Integer(ENV.fetch("DB_POOL", 5)) %>
-  reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
+  pool: 5
   timeout: 5000
 
 test:
   <<: *default
   database: db/echo_test.sqlite3
 
-production:
-  <<: *default
-  database: db/echo_production.sqlite3
-  
-# production: &deploy
-#  adapter: mysql
-#  encoding: utf8
-#  min_messages: warning
-#  pool: <%= [Integer(ENV.fetch("MAX_THREADS", 5)), Integer(ENV.fetch("DB_POOL", 5))].max %>
-#  timeout: 5000
-#  url:  <%= ENV.fetch("DATABASE_URL", "") %>
+production: &prod
+  adapter: mysql2
+  encoding: utf8
+  min_messages: warning
+  pool: 5
+  timeout: 5000
+  database: echo_production
+  username: echo
+  password: <%= ENV["MYSQL_PASSWD"] %>
+  shost: localhost
 
-#staging: *deploy
+staging:
+  <<: *prod
+  

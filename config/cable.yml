@@ -3,6 +3,9 @@ development:
 
 test:
   adapter: async
+  
+staging:
+  adapter: async
 
 production:
   adapter: redis

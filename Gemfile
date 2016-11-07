@@ -6,7 +6,7 @@ gem "american_date"
 gem "autoprefixer-rails"
 gem "bourbon"
 gem "devise"
-gem "devise_ldap_authenticatable", git: "git://github.com/cschiewek/devise_ldap_authenticatable.git"
+gem "devise_ldap_authenticatable", git: "https://github.com/cschiewek/devise_ldap_authenticatable.git"
 gem "dotenv-rails"
 gem "flutie"
 gem "formtastic"
@@ -62,12 +62,12 @@ group :test do
 end
 
 group :staging, :production do
+  gem "mysql2"
   gem "rack-timeout"
+  gem "whowas", git: "https://github.com/TuftsUniversity/whowas", branch: "matchers"
 end
 
 group :production do
   gem "syslogger"
 end
 
-# temporarily use local whowas while in development
-gem "whowas", path: "/opt/whowas", branch: "matchers"

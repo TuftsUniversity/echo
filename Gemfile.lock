@@ -1,17 +1,19 @@
 GIT
-  remote: git://github.com/cschiewek/devise_ldap_authenticatable.git
-  revision: 8c980a55981c1ccd9f284779bbe77d1209355252
-  specs:
-    devise_ldap_authenticatable (0.8.6)
-      devise (>= 3.4.1)
-      net-ldap (>= 0.6.0, <= 0.11)
-
-PATH
-  remote: /opt/whowas
+  remote: https://github.com/TuftsUniversity/whowas
+  revision: 594db819dc72c0388fbf051d8d7463b97ba9815d
+  branch: matchers
   specs:
     whowas (0.2.2)
       middleware
       splunk-sdk-ruby
+
+GIT
+  remote: https://github.com/cschiewek/devise_ldap_authenticatable.git
+  revision: 69ba4bb48865a6da6d30f707e287565e3bc60a00
+  specs:
+    devise_ldap_authenticatable (0.8.6)
+      devise (>= 3.4.1)
+      net-ldap (>= 0.6, != 0.12)
 
 GEM
   remote: https://rubygems.org/
@@ -164,10 +166,11 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
+    mysql2 (0.4.5)
     neat (1.8.0)
       sass (>= 3.3)
       thor (~> 0.19)
-    net-ldap (0.11)
+    net-ldap (0.15.0)
     nio4r (1.2.1)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
@@ -341,6 +344,7 @@ DEPENDENCIES
   launchy
   listen
   lograge
+  mysql2
   neat
   normalize-rails (~> 3.0.0)
   nprogress-rails

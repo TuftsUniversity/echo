@@ -3139,7 +3139,7 @@
  </binding>
  <service name='ProteusAPI'>
   <port binding='tns:ProteusAPIBinding' name='ProteusAPIPort'>
-   <soap:address location='https://moriarty.net.tufts.edu/Services/API'/>
+   <soap:address location='https://ipam.net.tufts.edu/Services/API'/>
   </port>
  </service>
 </definitions>

@@ -64,10 +64,10 @@ end
 group :staging, :production do
   gem "mysql2"
   gem "rack-timeout"
-  gem "whowas", git: "https://github.com/TuftsUniversity/whowas", branch: "matchers"
 end
 
 group :production do
   gem "syslogger"
 end
 
+gem "whowas", git: "https://github.com/TuftsUniversity/whowas", branch: "matchers"

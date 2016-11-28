@@ -8,7 +8,7 @@ Rails.application.configure do
   config.assets.compile = false
   config.log_level = :debug
   config.log_tags = [ :request_id ]
-  config.logger = Syslogger.new("INFOSEC-ECHO")
+  config.syslogger = Syslogger.new("INFOSEC-ECHO")
   config.lograge.enabled = true
   config.lograge.formatter = Lograge::Formatters::Json.new
   # add time to lograge

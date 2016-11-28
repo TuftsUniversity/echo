@@ -30,7 +30,13 @@ module Whowas
           { configurationId: CONFIG[:id], macAddress: input[:mac] }, 
           cookies: @@cookie
       )
-      Rails.logger.tagged("INFOSEC-ECHO") { Rails.logger.info "Echo queried Bluecat Proteus for a MAC address." }
+      
+      ## LOG TO SYSLOG
+      if Rails.configuration.syslogger
+        Rails.configuration.syslogger.tagged("INFOSEC-ECHO") do
+          Rails.configuration.syslogger.info "Echo queried Bluecat Proteus for a MAC address."
+        end
+      end
       
       response.body[:get_mac_address_response][:return][:properties] rescue ""
     end
@@ -41,13 +47,26 @@ module Whowas
         response = @@client.call :login do 
           message username: CONFIG[:username], password: CONFIG[:password]
         end
-        Rails.logger.tagged("INFOSEC-ECHO") { Rails.logger.info "Echo logged into Bluecat Proteus."}
+        
+        ## LOG TO SYSLOG
+        if Rails.configuration.syslogger
+          Rails.configuration.syslogger.tagged("INFOSEC-ECHO") do        
+            Rails.configuration.syslogger.info "Echo logged into Bluecat Proteus."
+          end
+        end
         
         @@cookie = response.http.cookies
       end
       @@client
     rescue StandardError => e
-      Rails.logger.tagged("INFOSEC-ECHO") { Rails.logger.error "Echo failed to login to Bluecat Proteus." }
+    
+      ## LOG TO SYSLOG
+      if Rails.configuration.syslogger
+        Rails.configuration.syslogger.tagged("INFOSEC-ECHO") do
+          Rails.configuration.syslogger.error "Echo failed to login to Bluecat Proteus."
+        end
+      end
+      
       raise Whowas::Errors::ServiceUnavailable, "#{self.class.name}: #{e}"      
     end        
    

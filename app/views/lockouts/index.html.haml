@@ -1,0 +1,21 @@
+- content_for :subheader do
+  %header
+    .page-title
+
+
+%section#lockouts-search.flex-box
+  %h2.flex-title
+    Lockouts
+    
+  .lockouts-search-form
+    = semantic_form_for @lockout, url: search_lockouts_path, remote: true do |form|
+      = form.inputs do
+        = form.input :username, label: "Tufts Username"
+      = form.actions do
+        = form.action :submit, label: "Search"
+
+  .lockouts-search-results
+    #lockouts-search-spinner
+      = render "shared/spinner"
+        
+    #lockouts-search-results-content.loading-content

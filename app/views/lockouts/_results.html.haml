@@ -1,0 +1,7 @@
+.lockouts-search-results-js
+  TEST
+  - if results && !results.empty?
+    - results.each do |result|
+      = result.timestamp.to_s + " - " + result.host
+  - else
+    = "No lockouts found."

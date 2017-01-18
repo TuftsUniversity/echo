@@ -1,0 +1,2 @@
+class Lockout < ApplicationRecord
+end

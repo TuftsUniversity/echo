@@ -6,16 +6,19 @@
 %section#lockouts-search.flex-box
   %h2.flex-title
     Lockouts
-    
-  .lockouts-search-form
-    = semantic_form_for @lockout, url: search_lockouts_path, remote: true do |form|
-      = form.inputs do
-        = form.input :username, label: "Tufts Username"
-      = form.actions do
-        = form.action :submit, label: "Search"
+  
+  .sidebar  
+    = render "search_form"
+  
+    .sidebar-container
+      %h2 Top Lockouts in Past 72 Hours
+      - @top_lockouts.each do |lockout|
+        .sidebar-row
+          .sidebar-row-left
+            = link_to lockout[0], search_lockouts_path(lockout: {username: lockout[0]})
+          .sidebar-row-right
+            = lockout[1].to_s
 
   .lockouts-search-results
-    #lockouts-search-spinner
-      = render "shared/spinner"
-        
-    #lockouts-search-results-content.loading-content
+    #lockouts-search-results-content
+      = render "lockouts"

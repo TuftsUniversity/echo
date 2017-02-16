@@ -1,16 +1,17 @@
 .lockouts-search-results-js
-  %h2
-    Lockouts for 
-    = @username
-    
-  %table#lockouts-results-table
+  %h2 Lockouts - Past 24 hours
+  
+  %table#lockouts-table
     %thead
       %th Timestamp
+      %th Username
       %th Host
     %tbody
       - @lockouts.each do |result|
         %tr
           %td
             = result.formatted_timestamp
+          %td
+            = link_to result.username, search_lockouts_path(lockout: {username: result.username})
           %td
             = result.host

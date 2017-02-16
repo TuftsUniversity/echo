@@ -1,4 +1,5 @@
 module ErrorsHelper
+  # :nocov:
   def humanize_error(error)
     case error.to_s
     when /no time information/
@@ -11,4 +12,5 @@ module ErrorsHelper
       "An unknown error occured.  Please send an email to #{ENV["EMAIL"]} with the following message: #{error}."
     end
   end
+  # :nocov:
 end

@@ -20,6 +20,7 @@ module Whowas
     # All custom API code is defined in the private methods below.  Naturally,
     # you can add private methods as needed for connecting to the API, etc. 
     private
+    # :nocov:
     
     ## Required
     

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :whowas_searches, only: [:index, :create]
   resources :lockouts, only: [:index] do
     collection do
-      post 'search'
+      get 'search'  # for links
+      post 'search' # for form
     end
   end
 

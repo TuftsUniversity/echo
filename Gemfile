@@ -4,6 +4,7 @@ ruby "2.3.1"
 
 gem "american_date"
 gem "autoprefixer-rails"
+gem "bitters"
 gem "bourbon"
 gem "devise"
 gem "devise_ldap_authenticatable", git: "git://github.com/cschiewek/devise_ldap_authenticatable.git"
@@ -19,6 +20,7 @@ gem "nprogress-rails"
 gem "rails", "~> 5.0.0"
 gem "sass-rails", "~> 5.0"
 gem "savon"
+gem "sneakers"
 gem "sprockets", ">= 3.0.0"
 gem "sqlite3"
 gem "suspenders"
@@ -65,4 +67,7 @@ group :staging, :production do
 end
 
 # temporarily use local whowas while in development
-gem "whowas", path: "/opt/whowas"
+# gem "whowas", path: "/opt/whowas"
+
+
+gem "whowas", git: "https://github.com/TuftsUniversity/whowas", branch: "matchers"

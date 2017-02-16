@@ -3,15 +3,14 @@ class LockoutsController < ApplicationController
     
   def index
     @lockout = Lockout.new
-    respond_to do |format|
-      format.js
-      format.html
-    end    
+    @lockouts = Lockout.in_last(24.hours).by_newest
+    @top_lockouts = Lockout.in_last(72.hours).top_users(5)
   end
   
   def search
+    @username = params[:lockout][:username]
     @lockout = Lockout.new
-    @results = Lockout.where(username: params[:lockout][:username]).order("timestamp DESC")
-    render :index
+    @lockouts = Lockout.for_user(@username).by_newest
+    @top_hosts = Lockout.for_user(@username).top_hosts(5)
   end 
 end

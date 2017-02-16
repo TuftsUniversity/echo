@@ -1,0 +1,21 @@
+.sidebar
+  @include dashboard-medium
+    @include span-columns(4)
+    border-right: 1px solid lighten($grey, 45%)
+
+  padding-right: 1.5em
+  
+  .sidebar-container
+    padding-top: 2em
+  
+  .sidebar-row
+    @include outer-container
+    border-bottom: 1px solid lighten($grey, 45%)
+    padding: .5em 0
+    
+    .sidebar-row-left
+      @include span-columns(11)
+      
+    .sidebar-row-right
+      @include span-columns(1)
+      text-align: right

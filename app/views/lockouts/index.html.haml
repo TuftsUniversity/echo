@@ -1,0 +1,24 @@
+- content_for :subheader do
+  %header
+    .page-title
+
+
+%section#lockouts-search.flex-box
+  %h2.flex-title
+    Lockouts
+  
+  .sidebar  
+    = render "search_form"
+  
+    .sidebar-container
+      %h2 Top Lockouts in Past 72 Hours
+      - @top_lockouts.each do |lockout|
+        .sidebar-row
+          .sidebar-row-left
+            = link_to lockout[0], search_lockouts_path(lockout: {username: lockout[0]})
+          .sidebar-row-right
+            = lockout[1].to_s
+
+  .lockouts-search-results
+    #lockouts-search-results-content
+      = render "lockouts"

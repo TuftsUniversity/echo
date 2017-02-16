@@ -1,0 +1,16 @@
+.lockouts-search-results-js
+  %h2
+    Lockouts for 
+    = @username
+    
+  %table#lockouts-results-table
+    %thead
+      %th Timestamp
+      %th Host
+    %tbody
+      - @lockouts.each do |result|
+        %tr
+          %td
+            = result.formatted_timestamp
+          %td
+            = result.host

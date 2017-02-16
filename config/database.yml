@@ -3,8 +3,9 @@ development: &default
   database: db/echo_development.sqlite3
   encoding: utf8
   min_messages: warning
-  pool: 5
-  timeout: 5000
+  pool: <%= Integer(ENV.fetch("DB_POOL", 15)) %>
+  reaping_frequency: <%= Integer(ENV.fetch("DB_REAPING_FREQUENCY", 10)) %>
+  reconnect: true
 
 test:
   <<: *default
@@ -14,7 +15,7 @@ production: &prod
   adapter: mysql2
   encoding: utf8
   min_messages: warning
-  pool: 5
+  pool: <%= [Integer(ENV.fetch("MAX_THREADS", 15)), Integer(ENV.fetch("DB_POOL", 15))].max %>
   timeout: 5000
   database: echo_production
   username: echo

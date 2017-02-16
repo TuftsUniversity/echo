@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811145218) do
+ActiveRecord::Schema.define(version: 20170111151556) do
+
+  create_table "lockouts", force: :cascade do |t|
+    t.datetime "timestamp"
+    t.string   "username"
+    t.string   "host"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username",                       null: false

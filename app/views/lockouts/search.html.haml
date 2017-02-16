@@ -1,0 +1,29 @@
+- content_for :subheader do
+  %header
+    .page-title
+
+
+%section#lockouts-search.flex-box
+  %h2.flex-title
+    Lockouts
+    
+  .sidebar
+    = render "search_form"
+  
+    .sidebar-container
+      %h2 
+        Top Hosts for 
+        = @username
+        
+      - @top_hosts.each do |host|
+        .sidebar-row
+          .sidebar-row-left
+            = link_to host[0], search_lockouts_path(lockout: {username: @username}, queries2: {search: host[0]})
+          .sidebar-row-right
+            = host[1]
+            
+  .lockouts-search-results
+    #lockouts-search-results-content
+      = render "results"
+      
+    = link_to "<< Back to index", lockouts_path

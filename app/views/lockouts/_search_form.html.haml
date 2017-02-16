@@ -1,0 +1,6 @@
+.lockouts-search-form
+  = semantic_form_for @lockout, url: search_lockouts_path, method: :get do |form|
+    = form.inputs do
+      = form.input :username, label: "Tufts Username"
+    = form.actions do
+      = form.action :submit, label: "Search"

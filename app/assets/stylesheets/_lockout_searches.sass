@@ -1,0 +1,65 @@
+#lockouts-search
+  @include outer-container
+
+  h2
+    color: $grey
+    display: block
+    font: normal 17px $sans-serif
+    margin-bottom: 1em
+    
+    @include dashboard-small-only
+      font-size: 2.4rem
+                       
+  .lockouts-search-form
+    input[type="submit"]
+      margin-top: 1rem
+      width: 100%
+      
+      @include dashboard-small-only
+        font-size: 3rem      
+        margin: .25em 0
+        padding: .5em .75em     
+
+  .lockouts-search-results
+    @include dashboard-medium
+      @include span-columns(8)
+      padding-top: 0
+      
+    @include dashboard-small-only
+      padding-top: 2em
+
+    position: relative
+    
+
+      
+    p
+      margin-bottom: 2em
+     
+     
+    .lockouts-results-table, .lockouts-table
+      @include outer-container
+      
+      th
+        text-align: left
+
+      .lockouts-results-label
+        @include dashboard-medium
+          @include span-columns(3)
+        
+        line-height: 1em
+        margin-bottom: .5em
+        
+        @include dashboard-small-only
+          text-decoration: underline
+        
+      .lockouts-results-log
+        @include dashboard-medium
+          @include span-columns(9)
+          @include omega()
+        
+        line-height: 1em
+        overflow-wrap: break-word
+        margin-bottom: .5em
+    
+  .lockouts-search-errors
+    color: $red

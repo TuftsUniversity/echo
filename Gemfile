@@ -4,6 +4,7 @@ ruby "2.3.1"
 
 gem "american_date"
 gem "autoprefixer-rails"
+gem "bitters"
 gem "bourbon"
 gem "devise"
 gem "devise_ldap_authenticatable", git: "https://github.com/cschiewek/devise_ldap_authenticatable.git"
@@ -21,9 +22,9 @@ gem "nprogress-rails"
 gem "rails", "~> 5.0.0"
 gem "sass-rails", "~> 5.0"
 gem "savon"
+gem "sneakers"
 gem "sprockets", ">= 3.0.0"
 gem "sqlite3"
-gem "suspenders"
 gem "turbolinks", "~> 5.0.0"
 gem "uglifier"
 
@@ -71,3 +72,4 @@ group :production do
 end
 
 gem "whowas", git: "https://github.com/TuftsUniversity/whowas", branch: "matchers"
+

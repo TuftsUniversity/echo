@@ -1,0 +1,47 @@
+.nav-wrapper
+  margin: 0
+  padding: 0
+  
+.nav-container
+  @include outer-container
+  flex: 1
+
+  .nav-box
+    @include span-columns(2)
+    align-self: stretch
+    background: $white
+    border-radius: $base-border-radius
+    box-shadow: inset 0 0 1px $grey
+    display: block
+    flex: 2 2 15em
+    height: 8em
+    margin: 0 2em 0 0
+    padding: 2em
+    text-align: center
+    text-decoration: none
+    width: 8em
+    
+    a
+      color: $primary-color
+    
+  .nav-icon
+    color: $primary-color
+    font-size: 3em
+    text-align: center
+    
+    
+  // for nav bar on content pages
+  .nav-box-small
+    @extend .nav-box
+    height: auto
+    margin: 0 .5em 0 0
+    padding: 1em .5em
+    width: 6em
+  
+  .nav-icon-small
+    @extend .nav-icon
+    font-size: 2em
+      
+  .selected
+    background-color: $primary-color
+    color: white

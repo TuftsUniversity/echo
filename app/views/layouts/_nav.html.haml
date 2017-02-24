@@ -1,0 +1,25 @@
+%section.nav-wrapper{role: "nav"}
+  .nav-container
+    - if page == "lockouts"
+      .nav-box-small.selected
+        .nav-icon-small.selected
+          = fa_icon "lock"
+        Lockouts
+    - else        
+      = link_to lockouts_path do
+        .nav-box-small
+          .nav-icon-small
+            = fa_icon "lock"
+          Lockouts
+          
+    - if page == "whowas"
+      .nav-box-small.selected
+        .nav-icon-small.selected 
+          = fa_icon "user"
+        Whowas
+    - else                 
+      .nav-box-small
+        = link_to whowas_searches_path do
+          .nav-icon-small
+            = fa_icon "user"
+          Whowas

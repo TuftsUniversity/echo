@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  authenticated :user do
+    root to: "welcome#index", as: "auth_root"
+  end  
+
+  root to: redirect("/users/sign_in")
+  
   resources :whowas_searches, only: [:index, :create]
   resources :lockouts, only: [:index] do
     collection do
@@ -7,10 +14,4 @@ Rails.application.routes.draw do
       post 'search' # for form
     end
   end
-
-  authenticated :user do
-    root to: "whowas_searches#index", as: "auth_root"
-  end
-
-  root to: redirect("/users/sign_in")
 end

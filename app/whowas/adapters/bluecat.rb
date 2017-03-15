@@ -43,7 +43,8 @@ module Whowas
     end
 
     def client
-      if @@client.nil? || @@cookie.nil?
+      # if @@client.nil? || @@cookie.nil?
+      # HOTFIX FOR SESSION PROBLEM -- FIXME
         @@client = Savon.client(ssl_verify_mode: :none, wsdl: File.expand_path(CONFIG[:wsdl], __FILE__))
         response = @@client.call :login do 
           message username: CONFIG[:username], password: CONFIG[:password]
@@ -57,7 +58,7 @@ module Whowas
         end
         
         @@cookie = response.http.cookies
-      end
+      ## end
       @@client
     rescue StandardError => e
     

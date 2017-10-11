@@ -52,8 +52,7 @@ RSpec.configure do |config|
   config.add_setting :ldap_server
   config.before(:example, type: :ldap) do
     RSpec.configuration.ldap_server = Ladle::Server.new(
-      ldif: "ldap_users.ldif",      
-      quiet: true
+      ldif: "ldap_users.ldif"
     ).start
   end
   config.after(:example, type: :ldap) do
